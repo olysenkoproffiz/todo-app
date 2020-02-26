@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // const baseAPI = process.env.VUE_APP_BASE_URL;
 // const baseAPI = 'http://localhost:3000/todos';
-const baseAPI = 'https://jsonplaceholder.typicode.com/todos';
+const baseAPI = 'https://my-json-server.typicode.com/olysenkoproffiz/todo-app/todos';
 
 const state = {
   todos: []
