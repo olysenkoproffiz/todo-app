@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build:staging": "vue-cli-service build --mode staging",
+    "local": "start npm run server && start npm run dev",
     "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "server": "json-server db.json",
     "lint": "vue-cli-service lint",
-    "start": "node server.js"
+    "start": "cross-env NODE_ENV=staging node server.js",
+    "build": "cross-env NODE_ENV=production vue-cli-service build"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -22,6 +23,7 @@
     "@vue/cli-plugin-eslint": "~4.2.0",
     "@vue/cli-service": "~4.2.0",
     "babel-eslint": "^10.0.3",
+    "cross-env": "^7.0.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
     "vue-template-compiler": "^2.6.11"

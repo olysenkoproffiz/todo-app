@@ -1,8 +1,13 @@
 import axios from 'axios';
 
-// const baseAPI = process.env.VUE_APP_BASE_URL;
-// const baseAPI = 'http://localhost:3000/todos';
-const baseAPI = 'https://my-json-server.typicode.com/olysenkoproffiz/todo-app/todos';
+// NOTE: here for the fake API in PRODUCTION used service: https://my-json-server.typicode.com/
+// it has some limitations:
+// Changes are faked and aren't persisted (just like JSONPlaceholder)
+// Requests are cached (1 minute)
+// db.json has limits
+// All servers are public
+// Private GitHub repositories aren't supported (yet)
+const baseAPI = process.env.VUE_APP_BASE_URL;
 
 const state = {
   todos: []
@@ -19,6 +24,7 @@ const actions = {
     commit('setTodos', response.data);
   },
   async addTodo({ commit }, title) {
+    console.log(process.env.VUE_APP_BASE_URL);
     const response = await axios.post(baseAPI, { title, completed: false });
     commit('newTodo', response.data);
   },
