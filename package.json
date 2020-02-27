@@ -7,7 +7,7 @@
     "dev": "vue-cli-service serve",
     "server": "json-server db.json",
     "lint": "vue-cli-service lint",
-    "start": "cross-env NODE_ENV=staging node server.js",
+    "start": "node server.js",
     "build": "cross-env NODE_ENV=production vue-cli-service build"
   },
   "dependencies": {
